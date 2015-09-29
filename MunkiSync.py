@@ -5,6 +5,7 @@
 # Libraries
 import subprocess
 import os
+import datetime
 from mount_shares_better import mount_share
 
 # Variables
@@ -12,7 +13,7 @@ MASTER_MOUNT_PT = "/Volumes/Munki"
 MASTER_MOUNT_IP = "smb://username:password@ip/Munki"
 MUNKI_MASTER = "/Volumes/Munki/munki_repo/"
 MUNKI_LOCAL = "/Volumes/Munki HD/munki_repo"
-
+DATE = datetime.datetime.now().date();
 # Functions
 
 
@@ -38,6 +39,7 @@ def UpdatePermissions():
 
 
 def main():
+    print "MunkiSync run at {0}".format(datetime.datetime.now())
     print "Mounting Share at {0} ".format(MASTER_MOUNT_PT)
     if (os.path.isdir(MASTER_MOUNT_PT)):
         print "Already Mounted Munki Master at {0}".format(MASTER_MOUNT_PT)
@@ -47,5 +49,7 @@ def main():
     SyncEverything()
     UpdatePermissions()
     UnmountServer()
+    print "MunkiSync run completed at {0}".format(datetime.datetime.now())
+    exit()
 
 main()
