@@ -23,7 +23,7 @@ def UnmountServer():
 
 def SyncEverything():
     if (os.path.isdir(MUNKI_LOCAL)):
-        sync = subprocess.check_call(['/usr/local/bin/rsync', '--exclude=\".*\"', '-r', '--perms', '--times', '--progress', '--delete-after', MUNKI_MASTER, MUNKI_LOCAL])
+        sync = subprocess.check_call(['/usr/bin/rsync', '--exclude=\".*\"', '-r', '--perms', '--times', '--progress', '--delete-after', MUNKI_MASTER, MUNKI_LOCAL])
     else:
         print "{0} is not available to sync too.".format(MUNKI_LOCAL)
         exit()
