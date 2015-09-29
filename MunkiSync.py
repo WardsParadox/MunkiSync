@@ -38,7 +38,7 @@ def UpdatePermissions():
 
 
 def main():
-    if not(os.path.isdir(MASTER_MOUNT_PT)):
+    if (os.path.isdir(MASTER_MOUNT_PT)):
         print("Ok to mount at %s" % MASTER_MOUNT_PT)
         mount_share(MASTER_MOUNT_IP)
         print("Mounted Munki Master (%s) at %s".format(MASTER_MOUNT_IP, MASTER_MOUNT_PT))
