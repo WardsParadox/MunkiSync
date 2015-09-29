@@ -19,7 +19,7 @@ MUNKI_LOCAL = "/Volumes/Munki HD/munki_repo"
 def UnmountServer():
     if (os.path.isdir(MASTER_MOUNT_PT)):
         unmount = subprocess.check_call(["/sbin/umount", MASTER_MOUNT_PT])
-        print "{0} unmounted".format("MASTER_MOUNT_PT")
+        print "{0} unmounted".format(MASTER_MOUNT_PT)
 
 
 def SyncEverything():
