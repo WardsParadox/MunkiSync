@@ -10,7 +10,7 @@ from mount_shares_better import mount_share
 
 # Variables
 MASTER_MOUNT_PT = "/Volumes/Munki"
-MASTER_MOUNT_IP = "smb://192.168.145.26/Munki"
+MASTER_MOUNT_IP = "smb://user:pass@serverip/Munki"
 MUNKI_MASTER = "/Volumes/Munki/munki_repo/"
 MUNKI_LOCAL = "/Volumes/Munki HD/munki_repo"
 
