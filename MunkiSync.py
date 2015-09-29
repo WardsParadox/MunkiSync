@@ -24,7 +24,7 @@ def UnmountServer():
 
 def SyncEverything():
     if (os.path.isdir(MUNKI_LOCAL)):
-        sync = subprocess.check_call(["/usr/local/bin/rsync", "--exclude=\".*\"", "-r", "--perms", "--times", "--progress", "--delete-after", MUNKI_MASTER, MUNKI_LOCAL])
+        sync = subprocess.check_call(['/usr/local/bin/rsync', '--exclude=\".*\"', '-r', '--perms', '--times', '--progress', '--delete-after', MUNKI_MASTER, MUNKI_LOCAL])
     else:
         print("%s is not available to sync too." % MUNKI_LOCAL)
         exit()
@@ -38,10 +38,8 @@ def UpdatePermissions():
 
 
 def main():
-    if not(os.path.isdir(MASTER_MOUNT_PT)):
-        print("Ok to mount at %s" % MASTER_MOUNT_PT)
-        mount_share(MASTER_MOUNT_IP)
-        print("Mounted Munki Master (%s) at %s".format(MASTER_MOUNT_IP, MASTER_MOUNT_PT))
+    mount_share(MASTER_MOUNT_IP)
+    print("Mounted Munki Master (%s) at %s".format(MASTER_MOUNT_IP, MASTER_MOUNT_PT))
     SyncEverything()
     UpdatePermissions()
     UnmountServer()
