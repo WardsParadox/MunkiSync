@@ -28,3 +28,5 @@ def mount_share(share_path):
          raise Exception('Error mounting url "%s": %s' % (share_path, output))
     # Return the mountpath
     return str(output[0])
+
+mount_share('smb://techhelp@192.168.145.26/Munki')

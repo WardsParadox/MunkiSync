@@ -8,16 +8,16 @@
 	<array>
 		<string>/usr/local/etc/MunkiSync/MunkiSync.py</string>
 	</array>
-	<key>StandardOutPath</key>
-	<string>/Users/USERNAME/Library/Logs/munkisyncer.log</string>
 	<key>StandardErrorPath</key>
 	<string>/Users/USERNAME/Library/Logs/munkisyncer.error.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/USERNAME/Library/Logs/munkisyncer.log</string>
 	<key>StartCalendarInterval</key>
 	<dict>
 		<key>Hour</key>
-		<integer>21</integer>
+		<integer>23</integer>
 		<key>Minute</key>
-		<integer>00</integer>
+		<integer>0</integer>
 	</dict>
 </dict>
 </plist>
